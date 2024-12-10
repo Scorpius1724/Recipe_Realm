@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+</head>
+<body>
+    <h1>Recipe List</h1>
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="{{ url_for('recipe', index=loop.index0) }}">{{ recipe }}</a></li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
