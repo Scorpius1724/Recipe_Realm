@@ -6,8 +6,26 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome to the Recipe Application</h1>
-    <p>Your one-stop solution for delicious recipes!</p>
+    <h1>Welcome to Recipe Realm</h1>
+    <p>Your ultimate culinary companion designed to inspire and simplify your cooking experience! Whether you're a seasoned chef or a novice in the kitchen, our application offers a diverse collection of delicious recipes to suit every taste and occasion.</p>
+
+<p>Features:</p>
+
+<ul>
+    <li>Extensive Recipe Collection: Explore a wide variety of recipes, from appetizers to desserts, each crafted to tantalize your taste buds.</li>
+    <li>Search Functionality: Easily find recipes by searching for ingredients or key terms, making meal planning a breeze.</li>
+    <li>Detailed Instructions: Each recipe comes with clear, step-by-step instructions, ensuring that you can recreate your favorite dishes with confidence.</li>
+    <li>User-Friendly Interface: Navigate through our intuitive interface to discover new recipes and save your favorites for quick access.</li>
+</ul>
+
+<p>Join us on a culinary journey and elevate your cooking skills with Recipe Realm. Happy cooking!</p>
+
+    <!-- Search Form -->
+    <form action="/search" method="post">
+        <input type="text" name="query" placeholder="Search for recipes" required>
+        <button type="submit">Search</button>
+    </form>
+
     <p><a href="{{ url_for('recipe_list') }}">View Recipe List</a></p>
 </body>
 </html>

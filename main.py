@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pandas as pd
 import json
 
@@ -11,6 +11,14 @@ recipes = pd.read_csv("recipes.txt")
 def home():
     # Display the home page
     return render_template("home.html")
+
+@app.route("/search", methods=["POST"])
+def search():
+    query = request.form.get("query", "").lower()
+    # Filter recipes based on NER
+    filtered_recipes = recipes[recipes['NER'].str.contains(query, case=False, na=False)]
+    recipe_list = filtered_recipes["title"].tolist()
+    return render_template("recipe_list.html", recipes=recipe_list)
 
 @app.route("/recipe-list")
 def recipe_list():
